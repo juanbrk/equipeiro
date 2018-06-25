@@ -3,10 +3,8 @@ package com.example.android.equipeiro;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -102,7 +100,8 @@ public class IngresoNombresJugadoresActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //Iniciar nueva actividad pasando los jugadores.
-                        mostrarToast("Confirmaste la generacion");
+                        Intent intent = parcelearJugadoresParaGenerarEquipos();
+                        startActivity(intent);
                     }
                 });
 
@@ -129,8 +128,13 @@ public class IngresoNombresJugadoresActivity extends AppCompatActivity {
         lblCantJugadoresRestantes.setText(String.valueOf(cantJugadoresRestantes));
     }
 
+    /**
+     * Crea un intent con un array de jugadores pasados como parceleables. Indica que actividad
+     * iniciar y devuelve el intent creado
+     * @return Un intent con una lista de tipo Jugador parceleados listo para iniciar actividad
+     */
     @NonNull
-    private Intent parcelearJugadoresParaIniciarActividad() {
+    private Intent parcelearJugadoresParaGenerarEquipos() {
         Bundle b = new Bundle();
 
         b.putParcelableArray("nombresJugadores", jugadores);
