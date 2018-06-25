@@ -96,4 +96,5 @@ public class GenerarEquiposActivity extends AppCompatActivity {
         mNombreJugadorEquipo2.append(jugador.getNombre() + "\n");
     }
 
+    //Todo: permitir el refresh de la lista de jugadores, para un nuevo shuffle y un nuevo equipo
 }

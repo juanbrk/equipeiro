@@ -28,7 +28,8 @@
                 android:layout_weight="0"
                 android:text="@string/nombre_equipo_1"
                 android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="24sp" />
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -51,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/nombre_jugador"
                     android:textAlignment="center"
-                    android:textSize="14sp" />
+                    android:textSize="24sp" />
 
             </FrameLayout>
 
@@ -70,7 +71,8 @@
                 android:layout_marginTop="8dp"
                 android:text="@string/lbl_nombre_equipo2"
                 android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="24sp" />
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -92,7 +94,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/nombre_jugador"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
 
             </FrameLayout>
 
