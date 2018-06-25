@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Equipeiro</string>
+    <string name="nombre_jugador">Nombre jugador</string>
+    <string name="lbl_nombre_equipo2">EQUIPO 2</string>
+    <string name="nombre_equipo_1">EQUIPO 1</string>
+    <string name="dialog_message_confirmar_generacion_equipos">¿Deseas confirmar la generacion de equipos?</string>
+</resources>
