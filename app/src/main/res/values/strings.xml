@@ -4,4 +4,5 @@
     <string name="lbl_nombre_equipo2">EQUIPO 2</string>
     <string name="nombre_equipo_1">EQUIPO 1</string>
     <string name="dialog_message_confirmar_generacion_equipos">¿Deseas confirmar la generacion de equipos?</string>
+    <string name="volver_a_generar_equipo">Volver a generar equipo</string>
 </resources>

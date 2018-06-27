@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.android.equipeiro.Modelo.Jugador;
@@ -14,7 +16,16 @@ import java.util.Random;
 public class GenerarEquiposActivity extends AppCompatActivity {
     private TextView mNombreJugadorEquipo1;
     private TextView mNombreJugadorEquipo2;
+    private Button btnVolverAGenerarEquipo;
     Jugador[] mNombresJugadoresArray;
+    private View.OnClickListener volverAGenerarEquiposListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            generarEquiposAlAzar(mNombresJugadoresArray);
+        }
+    };
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,9 +44,11 @@ public class GenerarEquiposActivity extends AppCompatActivity {
 
         mNombreJugadorEquipo1 = (TextView) findViewById(R.id.txt_nombre_jugador_equipo1);
         mNombreJugadorEquipo2 = (TextView) findViewById(R.id.txt_nombre_jugador_equipo2);
+        btnVolverAGenerarEquipo = (Button) findViewById(R.id.btn_volver_a_generar_equipos);
 
-        mNombreJugadorEquipo1.setText("");
-        mNombreJugadorEquipo2.setText("");
+        btnVolverAGenerarEquipo.setOnClickListener(volverAGenerarEquiposListener);
+
+
 
         generarEquiposAlAzar(mNombresJugadoresArray);
     }
@@ -53,6 +66,10 @@ public class GenerarEquiposActivity extends AppCompatActivity {
      * @param listaJugadores es el vector que será permutado y del cual se sacan los jugadores para cada equipo
      */
     public void generarEquiposAlAzar(Jugador[] listaJugadores){
+
+        mNombreJugadorEquipo1.setText("");
+        mNombreJugadorEquipo2.setText("");
+
         if (listaJugadores != null)
         {
             shuffleArray(mNombresJugadoresArray);
@@ -66,6 +83,9 @@ public class GenerarEquiposActivity extends AppCompatActivity {
                     agregarAEquipo2(listaJugadores[i]);
                 }
             }
+        } else {
+            mNombreJugadorEquipo1.setText("Error pasando los jugadores");
+            mNombreJugadorEquipo2.setText("Error pasando los jugadores");
         }
         //Terminar
     }
@@ -97,4 +117,5 @@ public class GenerarEquiposActivity extends AppCompatActivity {
     }
 
     //Todo: permitir el refresh de la lista de jugadores, para un nuevo shuffle y un nuevo equipo
+
 }
